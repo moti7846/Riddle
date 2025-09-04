@@ -1,11 +1,12 @@
 import { useContext, useState } from "react";
 import { UserContext } from "../App";
+import { Navigate, useNavigate } from "react-router";
 
 export default function Login() {
   const [isLogin, setIsLogin] = useState(true);
   const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
-  const [user, setUser] = useState(useContext(UserContext))
+  const [{user,setUser}] = useState(useContext(UserContext))
   const [msg, setMsg] = useState("")
 
 
@@ -26,6 +27,9 @@ export default function Login() {
         user.role = responseToken.role;
         setUser({ ...user })
         setMsg("You have successfully connected.")
+        setTimeout(() => {
+          (<Navigate to="/play" />)
+        }, 3000);
         return
       }
       const res = await response.json()

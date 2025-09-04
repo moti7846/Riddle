@@ -59,14 +59,12 @@ a:focus-visible {
 }
  */
 body {
-  display: flex;
-  justify-content: center;
   background-color: rgba(0, 113, 212, 0.589);
 }
 
 #root {
   display: grid;
-  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 6fr 1fr;
   justify-items: center;
   border: 5px solid;
   width: 96vw;
